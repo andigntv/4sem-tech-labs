@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group 'example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:42.6.0'
+
+    implementation 'org.hibernate.orm:hibernate-core:6.1.7.Final'
+    implementation 'org.hibernate:hibernate-entitymanager:6.0.0.Alpha7'
+    implementation 'org.hibernate.validator:hibernate-validator:8.0.0.Final'
+
+    implementation 'org.glassfish:jakarta.el:5.0.0-M1'
+
+    implementation 'org.mybatis:mybatis:3.5.13'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}

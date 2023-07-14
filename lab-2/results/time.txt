@@ -1,0 +1,8 @@
+Time spent inserting and getting 100 entities for each type of database connection
+
+JDBC insert time: 5.441072s
+JDBC get time: 0.0354081s
+Hibernate insert time: 1.2606822s
+Hibernate get time: 0.079124495s
+MyBatis insert time: 0.1908257s
+MyBatis 0.0082608s

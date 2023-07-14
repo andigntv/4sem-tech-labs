@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.bickbrother'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.hibernate:hibernate-validator:6.1.0.Final"
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.7.1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:3.0.4'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2"
+    implementation "org.modelmapper:modelmapper:3.1.1"
+
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    implementation 'org.springframework.amqp:spring-rabbit:2.3.14'
+    implementation 'com.rabbitmq:amqp-client:5.12.0'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.0.1'
+
+    implementation 'org.flywaydb:flyway-core:9.16.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    runtimeOnly 'org.postgresql:postgresql:42.5.4'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.4'
+
+    implementation project(':lab-5:data')
+    implementation project(':lab-5:utils')
+    implementation project(':lab-5:messages')
+    implementation project(':lab-5:cars')
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
